@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="Producto")
-public class Producto implements Serializable {
+public class Producto {
 
     @Id
     @GeneratedValue
@@ -48,7 +48,6 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
-    @JsonIgnore
     public UnidadMedida getUnidad_medida() {
         return unidad_medida;
     }
