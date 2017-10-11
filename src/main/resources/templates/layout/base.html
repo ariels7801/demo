@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head lang="es">
+    <title>Recursos financieros del FASP</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Styles -->
+    <!-- <link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet"></link> -->
+    <!-- <link href="/css/navbar-fixed-side.min.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/select2.min.css}"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/light-bootstrap-dashboard.css}"/>
+    <!-- <link rel="stylesheet"	href="/css/newsidebar.css"/> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
+    <!--  <link href='https://fonts.googleapis.com/css?family=Delius' rel='stylesheet'/> -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
+    <link rel="shortcut icon" type="image/png" th:href="@{/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/fasp.css}"/>
+    <!--<script>-->
+    <!--//Producción-->
+    <!--//var baseUrl="/FASP";-->
+    <!--//Desarrollo-->
+    <!--var baseUrl = "";-->
+    <!--</script>-->
+</head>
+<body class="sidebar-mini scrollStyle">
+    <!--<script>-->
+    <!--if (Boolean(sessionStorage.getItem("sidebar-toggle-collapsed"))) {-->
+    <!--var body = document.getElementsByTagName("body")[0];-->
+    <!--body.className = "scrollStyle";-->
+    <!--}-->
+    <!--</script>-->
+    <th:block layout:fragment="layer"></th:block>
+
+    <!-- Scripts -->
+    <script th:src="@{/jquery-3.2.1.min.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script th:src="@{/perfect-scrollbar.min.js}"></script>
+    <script th:src="@{/bootstrap.min-3.3.7.js}"></script>
+    <script th:src="@{/light-bootstrap-dashboard.js}"></script>
+    <script th:src="@{/select2.full.min.js}"></script>
+
+    <!--<script>-->
+    <!--$(function () {-->
+    <!--$.fn.select2.defaults.set('language', 'es');-->
+    <!--$('.select2').select2();-->
+    <!--});-->
+    <!--$('select').on(-->
+    <!--'select2:close',-->
+    <!--function () {-->
+    <!--$(this).focus();-->
+    <!--}-->
+    <!--);-->
+    <!--</script>-->
+    <th:block layout:fragment="scripts"></th:block>
+
+    <!--<script type="text/javascript" th:src="@{/validateForm.js}"></script>-->
+    <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/es.js"></script>
+
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script> -->
+
+
+    <!--<script th:inline="javascript">-->
+    <!--/*<![CDATA[*/-->
+    <!--var now = [[${now}]];-->
+    <!--$('#ctrl-financiero').on('hidden.bs.modal', function () {-->
+    <!--console.log('<<NOW>>:' + now);-->
+    <!--$('#ejercicioFiscalForm').bootstrapValidator('resetForm', true);-->
+    <!--document.getElementById("anioOrigen").selectedIndex = 0;-->
+    <!--document.getElementById("anioPostOrigen").selectedIndex = 0;-->
+    <!--document.getElementById("anioPostOrigen").disabled = false;-->
+    <!--$("#anioPostOrigen").show();-->
+    <!--document.getElementById("anioOrigen").disabled = false;-->
+    <!--$("#anioOrigen").show();-->
+    <!--});-->
+    <!--/*]]>*/-->
+    <!--</script>-->
+    <!--<script>-->
+    <!--$(document).on("click", ".fasp-ctrl", function () {-->
+    <!--var accion = $(this).attr('data-fasp');-->
+    <!--if (accion == 'control') {-->
+    <!--document.getElementById("anioPostOrigen").disabled = true;-->
+    <!--$("#anioPostOrigen").hide();-->
+    <!--} else {-->
+    <!--document.getElementById("anioOrigen").disabled = true;-->
+    <!--$("#anioOrigen").hide();-->
+    <!--}-->
+    <!--accion = baseUrl + "/fasp/" + accion;-->
+    <!--$('#ejercicioFiscalForm').get(0).setAttribute('action', accion);-->
+    <!--});-->
+    <!--</script>-->
+    <!--<script>-->
+    <!--$(document).on("click", ".navbar-minimize", function () {-->
+    <!--event.preventDefault();-->
+    <!--console.log("Session Storage: &#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;" + sessionStorage.getItem("sidebar-toggle-collapsed"));-->
+    <!--if (Boolean(sessionStorage.getItem("sidebar-toggle-collapsed"))) {-->
+    <!--sessionStorage.setItem("sidebar-toggle-collapsed", "");-->
+    <!--} else {-->
+    <!--sessionStorage.setItem("sidebar-toggle-collapsed", "1");-->
+    <!--}-->
+    <!--});-->
+    <!--</script>-->
+
+</body>
+</html>

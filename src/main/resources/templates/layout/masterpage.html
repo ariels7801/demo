@@ -1,0 +1,108 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
+<head>
+    <meta charset="UTF-8"/>
+    <title>FASP</title>
+</head>
+
+<body layout:fragment="layer">
+
+<div class="wrapper" id="wrapper">
+    <th:block th:replace="fragment/header"></th:block>
+    <th:block th:replace="fragment/sidenav"></th:block>
+    <div class="main-panel scrollStyle">
+        <div class="content">
+            <!--	<div class="se-pre-con"></div>  loading gif thingy -->
+            <div class="container-fluid" layout:fragment="content"></div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <p class="copyright pull-right">
+                    © 2017 Consejo Estatal de Seguridad (CES)
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</div>
+<div layout:fragment="modal"></div>
+<!-- LOGOUT MODAL -->
+<div class="modal fade" id="logoutQ" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+     data-backdrop="static">
+    <div class="modal-dialog modal-sm" style="top: 5%; ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> -->
+                <!--         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> -->
+                <h5 class="modal-title custom_align" id="Heading"><span class="fa fa-sign-out fa-md"
+                                                                        aria-hidden="true"></span> Cerrar sesión</h5>
+            </div>
+            <form role="form" th:action="@{/bye/logout}">
+                <div class="modal-body form-group" style="padding-bottom: 0px; padding-top: 0px;">
+                    <input class="form-control" type="hidden" name="param" id="param"></input>
+                    <br/>
+                    <p style="font-weight: bold;">¿Estás seguro que quieres cerrar sesión? </p>
+
+                </div>
+                <div class="modal-footer ">
+                    <button type="submit" class="btn btn-fill btn-success"><span class="fa fa-check-circle"
+                                                                                 aria-hidden="true"></span> Sí
+                    </button>
+                    <button type="button" class="btn btn-fill btn-default" data-dismiss="modal"><span
+                            class="fa fa-times" aria-hidden="true"></span> No
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- CONTROL FINANCIERO MODAL -->
+<div class="modal fade" id="ctrl-financiero" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+     data-backdrop="false">
+    <div class="modal-dialog modal-sm" style="right:22%; top: 3%; ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h5 class="modal-title custom_align" id="Heading"><span class="fa fa-calendar fa-md"
+                                                                        aria-hidden="true"></span> Elige un ejercicio
+                    fiscal</h5>
+            </div>
+            <form role="form" th:action="@{/fasp/control}" data-toggle="validator" id="ejercicioFiscalForm">
+                <div class="modal-body form-group" style="padding-bottom: 0px;">
+                    <select required="required" class="form-control" style="width: 100%;" id="anioOrigen" name="anio">
+                        <!-- 		      	<option selected="selected" value="default" disabled="disabled"	hidden="hidden">Selecciona un ejercicio fiscal</option> -->
+                        <!--<option th:each="catalogo : ${ejercicioFiscal}" th:text="${catalogo.anio}"-->
+                        <!--th:value="${catalogo.id}" th:selected="${catalogo.anio == now}">Ejercicio fiscal</option>-->
+                    </select>
+                    <select required="required" class="form-control" style="width: 100%;" id="anioPostOrigen"
+                            name="anio">
+                        <option value="default" selected="selected" disabled="disabled"
+                                hidden="hidden">Selecciona una opción
+                        </option>
+                        <!--<option th:each="catalogo : ${ejercicioFiscal}" th:text="${catalogo.anio}"-->
+                        <!--th:value="${catalogo.id}" th:if="${catalogo.origen_cerrado} == 1" th:selected="${catalogo.anio == now}">Ejercicio fiscal</option>-->
+                    </select>
+
+                </div>
+                <div class="modal-footer ">
+                    <button type="submit" id="go-control" class="btn btn-fill btn-success"><span
+                            class="fa fa-check-circle" aria-hidden="true"></span> Ir
+                    </button>
+                    <button type="button" class="btn btn-fill btn-default" data-dismiss="modal"><span
+                            class="fa fa-times" aria-hidden="true"></span> Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+</body>
+</html>
